@@ -8,19 +8,20 @@
 import SwiftUI
 
 struct MusicRow: View {
-    var name:String
-    var body: some View{
+    var name: String
+    var body: some View {
         Text("Music: \(name)")
     }
 }
 
-struct Restaraunt: Identifiable{
+struct Restaraunt: Identifiable {
     var id = UUID()
-    var name:String
+    var name: String
 }
-struct RestarauntRow:View{
-    var restauraunt:Restaraunt
-    var body: some View{
+
+struct RestarauntRow: View {
+    var restauraunt: Restaraunt
+    var body: some View {
         Text("Come and eat at \(restauraunt.name)")
     }
 }
@@ -32,17 +33,106 @@ struct ContentView: View {
 //    @State private var name =  ""
 //    @State private var celcius:Double = 0
 //    @State private var age = 18
-   
+
+//    @State private var users = ["Ian", "Maria", "Igor"]
+//    @State private var colors = ["red", "green", "blue"]
+//    @State private var selectedColor = 0
+//    @State private var additionalSetting = false
     
+    @State private var showingAlert = false
+
     var body: some View {
-        let first = Restaraunt(name: "First rest")
-        let second = Restaraunt(name: "Second rest")
-        let third = Restaraunt(name: "Third rest")
-        let restaurants = [first, second, third]
         
-        return List(restaurants){
-            restaurant in RestarauntRow(restauraunt: restaurant)
+        
+        Button(action: {
+            self.showingAlert = true
+        }){
+            Text("Show alert")
+        }.confirmationDialog("Colors", isPresented: $showingAlert){
+            Button("Red"){
+            }
         }
+        
+//                .alert("R u sure?",isPresented: $showingAlert){
+//            Button("Cancel", role:.cancel){}.foregroundColor(.red).background(Color.red)
+//            Button("Yes I'm", role:.destructive){}
+//        }
+        
+        
+//        Text("Hello world")
+//        Button("Show alert"){
+//            self.showingAlert = true
+//        }.alert("Hello", isPresented: $showingAlert){
+//            Button("Ok"){
+//                //
+//            }
+//            Button("cancel", role: .cancel){
+//                //
+//            }
+//        }
+//        NavigationView {
+//                Form {
+//                    Section(header: Text("Colors")) {
+//                    Picker(selection: $selectedColor, label: Text("Choose a color")) {
+//                        ForEach(0 ..< colors.count) {
+//                            Text(self.colors[$0])
+//                        }
+//                    }
+//                }.pickerStyle(SegmentedPickerStyle())
+//                Toggle(isOn: $additionalSetting) {
+//                    Text("Доп настройки")
+//                }
+//                Button(action: {
+////                    print("Changes saved")
+//                }) {
+//                    Text("Save changes")
+//                }.disabled(!additionalSetting)
+//            }.navigationTitle("Settings")
+//        }
+
+//        TabView{
+//            Text("FirstView")
+//                .tabItem{
+//                    Image(systemName: "cloud")
+//                    Text("Hello")
+//                }
+//            Text("SecondView")
+//                .tabItem{
+//                    Image(systemName: "house")
+//                    Text("Home")
+//                }
+//        }
+//        NavigationView{
+//            List{
+//                ForEach(users, id: \.self){
+//                    user in  Text(user)
+//                }.onDelete{
+//                    users.remove(atOffsets: $0)
+//                }
+//                .onMove{
+//                    users.move(fromOffsets: $0, toOffset: $1)
+//                }
+//            }
+//            .navigationTitle("Hello")
+//            .toolbar{
+//                EditButton()
+//            }
+//            Text("Hello world")
+//                .navigationTitle("Hello")
+//                .navigationBarTitleDisplayMode(.inline)
+//                .toolbar {
+//                        EditButton()
+//                    }
+//        }
+
+//        let first = Restaraunt(name: "First rest")
+//        let second = Restaraunt(name: "Second rest")
+//        let third = Restaraunt(name: "Third rest")
+//        let restaurants = [first, second, third]
+//
+//        return List(restaurants) {
+//            restaurant in RestarauntRow(restauraunt: restaurant)
+//        }
 //        List{
 //            MusicRow(name:"Rock")
 //            MusicRow(name:"Rap")
@@ -59,12 +149,12 @@ struct ContentView: View {
 //                .gesture(DragGesture(minimumDistance: 50).onEnded{
 //                    _ in print("drag")
 //                })
-////                .gesture(LongPressGesture(minimumDuration: 1.4).onEnded {
-////                    _ in print("pressed")
-////                })
-////                .onTapGesture(count: 2) {
-////                    print("You tapped twice")
-////                }
+        ////                .gesture(LongPressGesture(minimumDuration: 1.4).onEnded {
+        ////                    _ in print("pressed")
+        ////                })
+        ////                .onTapGesture(count: 2) {
+        ////                    print("You tapped twice")
+        ////                }
 //            Spacer()
 //            Text("Sum")
 //        }
