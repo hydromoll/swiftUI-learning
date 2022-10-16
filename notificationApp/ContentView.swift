@@ -7,24 +7,24 @@
 
 import SwiftUI
 
-struct MusicRow: View {
-    var name: String
-    var body: some View {
-        Text("Music: \(name)")
-    }
-}
-
-struct Restaraunt: Identifiable {
-    var id = UUID()
-    var name: String
-}
-
-struct RestarauntRow: View {
-    var restauraunt: Restaraunt
-    var body: some View {
-        Text("Come and eat at \(restauraunt.name)")
-    }
-}
+// struct MusicRow: View {
+//    var name: String
+//    var body: some View {
+//        Text("Music: \(name)")
+//    }
+// }
+//
+// struct Restaraunt: Identifiable {
+//    var id = UUID()
+//    var name: String
+// }
+//
+// struct RestarauntRow: View {
+//    var restauraunt: Restaraunt
+//    var body: some View {
+//        Text("Come and eat at \(restauraunt.name)")
+//    }
+// }
 
 struct ContentView: View {
 //    let colors = ["black", "white", "red", "green", "blue"]
@@ -38,27 +38,83 @@ struct ContentView: View {
 //    @State private var colors = ["red", "green", "blue"]
 //    @State private var selectedColor = 0
 //    @State private var additionalSetting = false
-    
-    @State private var showingAlert = false
 
+//    @State private var showingAlert = false
+
+//    @State private var countries = ["russia", "argentina", "uk", "usa", "sweden", "canada"].shuffled()
+//    @State private var correctAnswer = Int.random(in: 0...2)
+//    @State private var score = 0
+//    @State private var showAlert = true
+
+//    class User:ObservableObject {
+//        @Published var firstName = "Vladislav"
+//        @Published var lastName = "Avialine"
+//    }
+
+//    @ObservedObject var user = User()
+    @ObservedObject var settings = UserSettingsObj() 
     var body: some View {
-        
-        
-        Button(action: {
-            self.showingAlert = true
-        }){
-            Text("Show alert")
-        }.confirmationDialog("Colors", isPresented: $showingAlert){
-            Button("Red"){
+        VStack {
+            Text("Your score is \(settings.score)")
+            Button(action: {
+                self.settings.score += 1
+            }) {
+                Text("Increase")
             }
+            //
+
+//            Text("Your name is: \(user.firstName) \(user.lastName)")
+//            TextField("FirstName", text: $user.firstName)
+//            TextField("FirstName", text: $user.lastName)
         }
-        
+
+//        Text("Hello world!")
+
+//        ZStack{
+//            LinearGradient(gradient: Gradient(colors: [.black, .white]), startPoint: .top, endPoint: .bottom).ignoresSafeArea()
+//
+//            VStack(spacing:30) {
+//                VStack{
+//                    Text("Выберите флаг:")
+//                        .foregroundColor(.white)
+//                        .font(.headline)
+//                    Text(countries[correctAnswer])
+//                        .foregroundColor(.white)
+//                        .font(.largeTitle)
+//                        .fontWeight(.black)
+//                }
+//                ForEach(0..<3){number in
+//                    Button(action:{
+//                        //
+//                    }){
+//                        Image(self.countries[number])
+//                            .frame(width: 250, height: 130)
+//                            .clipShape(Capsule())
+//                    }
+//
+//                }
+//                Text("Общий счет: \(score)")
+//                    .font(.largeTitle)
+//            }
+//
+//        }.alert("Правильно",isPresented: $showAlert){
+//            Text("Hello")
+//        }
+
+//        Button(action: {
+//            self.showingAlert = true
+//        }){
+//            Text("Show alert")
+//        }.confirmationDialog("Colors", isPresented: $showingAlert){
+//            Button("Red"){
+//            }
+//        }
+
 //                .alert("R u sure?",isPresented: $showingAlert){
 //            Button("Cancel", role:.cancel){}.foregroundColor(.red).background(Color.red)
 //            Button("Yes I'm", role:.destructive){}
 //        }
-        
-        
+
 //        Text("Hello world")
 //        Button("Show alert"){
 //            self.showingAlert = true
@@ -83,7 +139,7 @@ struct ContentView: View {
 //                    Text("Доп настройки")
 //                }
 //                Button(action: {
-////                    print("Changes saved")
+        ////                    print("Changes saved")
 //                }) {
 //                    Text("Save changes")
 //                }.disabled(!additionalSetting)

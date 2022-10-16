@@ -11,6 +11,7 @@
 		A83703F628B001FE007323D0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83703F528B001FE007323D0 /* ContentView.swift */; };
 		A83703F828B001FF007323D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A83703F728B001FF007323D0 /* Assets.xcassets */; };
 		A83703FB28B001FF007323D0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A83703FA28B001FF007323D0 /* Preview Assets.xcassets */; };
+		A84AF6C128F9AF0C0057F238 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84AF6C028F9AF0C0057F238 /* UserSettings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		A83703F528B001FE007323D0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A83703F728B001FF007323D0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A83703FA28B001FF007323D0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A84AF6C028F9AF0C0057F238 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				A83703F328B001FE007323D0 /* notificationAppApp.swift */,
 				A83703F528B001FE007323D0 /* ContentView.swift */,
+				A84AF6C028F9AF0C0057F238 /* UserSettings.swift */,
 				A83703F728B001FF007323D0 /* Assets.xcassets */,
 				A83703F928B001FF007323D0 /* Preview Content */,
 			);
@@ -138,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A83703F628B001FE007323D0 /* ContentView.swift in Sources */,
+				A84AF6C128F9AF0C0057F238 /* UserSettings.swift in Sources */,
 				A83703F428B001FE007323D0 /* notificationAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
